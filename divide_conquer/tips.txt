@@ -1,4 +1,4 @@
-1. after binary search, the result of search should be checked, since the cursor might be overflowed, if it didn't find a proper position inside the array.
+1. After binary search, the result of search should be checked, since the cursor might be overflowed, if it didn't find a proper position inside the array.
    for example:
    search a rotated sorted array:
    [3, 4, 5, 1, 2] l cursor will be 3 

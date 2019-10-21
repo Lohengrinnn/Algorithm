@@ -1,4 +1,4 @@
-Generally speaking, there are 2 types of divide (& conquer) pattern, which differ from each other with termination condition
+generally speaking, there are 2 types of divide (& conquer) pattern, which differ from each other with termination condition
 1)
    while l < r:          l < r: means if l meets r, terminate.
        m = partition()
