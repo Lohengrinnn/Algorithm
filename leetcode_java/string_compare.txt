@@ -1,0 +1,13 @@
+
+String string1 = "A";
+String string2 = "A";
+String string3 = new String("A");
+  
+assertThat(string1 == string2).isTrue();
+assertThat(string1 == string3).isFalse();
+the first assertion is true because the two variables point to the same String.
+
+On the other hand, the second assertion is false because string1 is created with a literal and string3 is created using the new operator – therefore they reference different objects.
+
+
+using equals will walk around this problem, once content of two strings are the same the return val is true.
