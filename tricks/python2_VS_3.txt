@@ -1,0 +1,28 @@
+1. if maps are compared by value.
+Python2
+>>> map("ssa".count, "ssa") == map("ssa".count, "ssa")
+True
+
+Python3
+>>> map("ssa".count, "ssa") == map("ssa".count, "ssa")
+False
+
+>>> list(map("ssa".count, "ssa")) == list(map("ssa".count, "ssa"))
+True
+
+2.built_in function cmp,   and    sorted(iterable, cmp=func)
+Python2
+two cmp are existed.
+
+Python3
+two cmp are gone.
+one way to emulate cmp in sorted, is using key as a bridge to apply cmp.
+
+from functools import cmp_to_key
+def cmpfunc(x, y): # fake cmp return totally reverse result
+    return y - x
+
+sorted([1, 2, 3], key=cmp_to_key(cmpfunc))
+result: [3, 2, 1]
+
+

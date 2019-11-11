@@ -1,0 +1,21 @@
+1. Naturally, I come up with idea using HashSet to store visited.
+caution: array {i, j} can't be used as keys, in other words, is unhashable.
+in java, List<Integer> can be used as keys.
+new ArrayList<Integer>(Arrays.asList({}))
+
+*********** tuple is hashable,and list is not, in Python ************
+
+2. Although HashSet is fast, O(1) in best case, visited saving in whole 2d matrix is guaranteed O(1).
+visited = new int[i][j]
+
+3.Visited needs extra space to store signs to record if visited.
+A common trick to do this is that mark visited cell as "#" which is meaningless for process. The concern is that original value is destructed when mark by "#", in fact, it can be restored after recursion at the same section.
+for example:
+void dfs(i, j):
+    Char c = board[i][j]
+    board[i][j] = "#"
+    dfs(i - 1, j);
+    dfs(i + 1, j);
+    dfs(i, j - 1);
+    dfs(i, j + 1);
+    board[i][j] = c;    // restored at once return from recursion.
