@@ -8,6 +8,11 @@ new ArrayList<Integer>(Arrays.asList({}))
 2. Although HashSet is fast, O(1) in best case, visited saving in whole 2d matrix is guaranteed O(1).
 visited = new int[i][j]
 
+       [1,2,3]            [T,F,F]
+matrix [4,5,6]    visited [F,F,F]
+       [7,8,9]            [F,F,F]
+*********************************************************************
+
 3.Visited needs extra space to store signs to record if visited.
 A common trick to do this is that mark visited cell as "#" which is meaningless for process. The concern is that original value is destructed when mark by "#", in fact, it can be restored after recursion at the same section.
 for example:
@@ -19,3 +24,15 @@ void dfs(i, j):
     dfs(i, j - 1);
     dfs(i, j + 1);
     board[i][j] = c;    // restored at once return from recursion.
+
+       [1,2,#]
+matrix [4,#,#]
+       [7,8,9]
+*********************************************************************
+
+4.Leetcode 329, why doesn't this problme need visited?
+  Because the rule to search is smaller the current cell, which naturally prevent backward search, which causes unlimited recursion.
+       [1,2,3]  [1]  [1 <- 2]    2 dfs -> 1, but 2 > 1, so won't dfs back.   
+matrix [4,5,6]       [1 not -> 2]
+       [7,8,9]
+*********************************************************************
