@@ -1,0 +1,5 @@
+1. in union() of union-find
+   x = find(u)
+   y = find(v)
+   if x != y:
+      union(x, y) -----not not not------ union(u, v)

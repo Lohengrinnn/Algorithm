@@ -1,0 +1,35 @@
+Given a list of number, for the sake of simpleness, it's already sorted.
+for example:
+[1,2,3,3,3,4,6]
+we need to transfer repetitive number to a number bigger than it, to make sure all numbers appear once.
+Solution-1:
+find a empty space which the repetitive number can transfer to.
+[1,2,3,3?,3,4,6] ->
+[1,2,3,   3,4,3?->5,6]
+it's easy to numderstand, but the code will be not concise, because:
+1. after find a empty space, still need to come back to check if next of 3? is repetitive.
+2. repetitive number 3? should be removed from list, transfered number should be inserted into list 5.
+
+Solution-2:
+one-way scanning: record repetitive numbers until encouter empty space. To put each repetitive number, until all settled down.
+
+Solution-3:
+Both two solutions abide by one idea, find empty, don't occupy neighbor's possible position if there's no gap between neighbor, for example, 3 3? 3n. if 3n is 5n, then 3? can be change to 4 in-place.
+in fact, we can occupy neighbor's position, and let neighbor to find another position.
+[1,2,3,3,3,4,6] ->
+[1,2,3,4,3,4,6] ->
+[1,2,3,4,5,4,6] ->
+[1,2,3,4,5,6,6] ->
+[1,2,3,4,5,6,7] 
+although it looks like more cascade overwrite, but it's absolutely sequential, no need to destruct original list structure.
+detail:
+record a water_level, which it's lowest number current position can occupy.
+but if the number here is already bigger than water_level, it doesn't matter, because water_level is used to prevent the number equals to any previous number.
+for i in range(len(num)):
+    num[i] = water_level = (water_level + 1, num[i]) 
+water_level on the left side of equal sign is prev water_level, current should be bigger than prev water_level, it's at least water_level + 1, if num[i] < water_level + 1.
+more staightforward:
+    if num[i] < water_level = 1:
+        num[i] = water_level + 1
+    water_level = num[i]
+

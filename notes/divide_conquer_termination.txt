@@ -1,21 +1,29 @@
-generally speaking, there are 2 types of divide (& conquer) pattern, which differ from each other with termination condition
-1)
+1) qsort
    while l < r:          l < r: means if l meets r, terminate.
        m = partition()
-       if xxxx:
-           l = m + 1
-       else:
-           r = m - 1
-2) 
-   while l <= r:         l <= r: means if l meets r, need to do one more search
+       qsort(l, m - 1)
+       qsort(m + 1, r)
+
+2) binary search
+   while l <= r:         l <= r: means if l meets r, still conduct m
        m = l + (r - l) // 2
-       if xxxx:
+       if nums[m] < target:
            l = m + 1
-       else:
+       elif nums[m] > target:
            r = m - 1
+       else:
+           return nums[m]
 
-pattern 1: quick sort
-pattern 2: binary search in sorted array
+3) bisect - bisection
+   bisect_right(nums, target) all nums equal target left right
+   l, r = 0, len(nums) # notice! not last index, is length
+   while l < r:
+      m = (l + r) // 2
+      if target < nums[m]:
+          r = m
+      else:
+          l = m + 1
 
-For the pattern 1, the m is a pivot, used to divide with l and r. if l == r, means this half has only one element, for the sake of sort, no need to process, but if the purposes is search, still need to process it.
-For the pattern 2, as decribed above, when l == r, still need to process the last one element.
+For 1), the m is a pivot, used to divide with l and r. if l == r, means this half has only one element, for the sake of sort, no need to process, but if the purposes is search, still need to process it.
+For 2), when l == r, still need to process the last one element.
+For 3), almost like 2), except it only needs one comparison in each loop

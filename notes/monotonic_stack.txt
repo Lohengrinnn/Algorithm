@@ -1,0 +1,30 @@
+typical application:
+solving largest rectangle problem
+
+1322432
+    #
+ #  ##
+ # ####
+#######
+0123456
+
+candidate rectangles:
+0-6 * 1
+3-6 * 2
+4-5 * 3
+
+monotonic stack: record index, height of which is smallest one bigger than prev height. h[i] can be heigh of candidate rectangle.
+each step operation:
+1.if h[i] is higher than prev, just push the 'i'.
+2.if h[i] is smaller or equal than prev, pop all bigger one, push i, to abide by the law, i is smllest one bigger than prev.
+ 1) all bigger than i is poped, so prev will be smaller than h[i]
+ 2) h[i] is the smallest, because h[i]'s prevs poped is prev smallest, than which h[i] is even smaller.
+
+example:
+0           
+01          
+2           1*3 
+23
+234
+235         h[5] < h[4], it's 
+26
