@@ -1,0 +1,26 @@
+1. path compression from disjoint forest (union-find)
+   linked node   ->   root 1 connect leaves 2,3,4 directly
+   1.p = 1              1.p = 1
+   2.p = 1              2.p = 1
+   3.p = 2              3.p = 1
+   4.p = 3              4.p = 1
+
+   find(x): # x = 4
+   1) straight forward way:
+       c = x
+       while c.p != c: # only root.p == root
+           c = c.p
+       # c is root
+       while x.p != x:
+           x = x.p
+           x.p = c
+       return c
+
+   2) delicate iterative way:
+      if x.p != p:
+         x.p = find(x.p)   # find(4): 4.p=find(3)=3.p=find(2)=2.p=find(1)=1.p=1 
+      return x.p
+
+2. leetcode 277, find celebrity
+
+3. 
