@@ -9,3 +9,8 @@ d: depth
 3. cycle detection:
    When access a GREY vertex, means descendant visits predecessor.
    or access a vertex with discover time is not 0, finish time is 0, which means the vertex is GREY.
+
+4. topological sort:
+   cycle test:
+   DFS: go over topic 3.
+   BFS: after remove points and edges of points which have indegree == 0, still leave sevral vertex with non-zero indegree.
