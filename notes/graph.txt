@@ -7,5 +7,5 @@ d: depth
 π: parent
 
 3. cycle detection:
-   When access a GREY point, means descendant visits predecessor.
-   or access a point with finish time is ∞
+   When access a GREY vertex, means descendant visits predecessor.
+   or access a vertex with discover time is not 0, finish time is 0, which means the vertex is GREY.
