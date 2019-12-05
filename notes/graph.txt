@@ -1,0 +1,11 @@
+1. DFS:
+color: WHITE, GREY, BLACK
+d/f: discover time, finish time
+
+2. BFS:
+d: depth
+π: parent
+
+3. cycle detection:
+   When access a GREY point, means descendant visits predecessor.
+   or access a point with finish time is ∞
