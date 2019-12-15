@@ -11,12 +11,12 @@ Tree --- Inorder --- Morris Traversal
       /      \---- Prim
      /
 Graph ---- Topological sort --- Kahn
-     \                  \----- DFS-indegree
+     \                   \----- DFS-indegree
       \
        \-- Articulation --- Tarjan
         \
          \-- Shortest Path --- Bellman-Ford
-                      \----- Dijkstra
+                        \----- Dijkstra
 
 
 String --- Knuth-Morris-Pratt(KMP)
