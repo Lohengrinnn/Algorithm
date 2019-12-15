@@ -1,23 +1,23 @@
 Quicksort --- Lomuto
-       \_____ Hoare
+       \----- Hoare
 
 
-   /---- preorder
+   /---- Preorder
 Tree --- Inorder --- Morris Traversal 
-   \____ postorder
+   \---- Postorder
 
 
-      MST --- Kruskal
-      / \____ Prim
+       /-- MST --- Kruskal
+      /      \---- Prim
      /
-Gragh --- Topological sort --- Kahn
-     \                  \_____ DFS-indegree
+Graph ---- Topological sort --- Kahn
+     \                  \----- DFS-indegree
       \
-       \__ Articulation --- Tarjan
-        |
-        \_ Shortest Path --- Bellman-Ford
-                      \_____ Dijkstra
+       \-- Articulation --- Tarjan
+        \
+         \-- Shortest Path --- Bellman-Ford
+                      \----- Dijkstra
 
 
 String --- Knuth-Morris-Pratt(KMP)
-    \_____ Horspool
+    \----- Horspool
