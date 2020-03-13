@@ -3,3 +3,8 @@
    y = find(v)
    if x != y:
       union(x, y) -----not not not------ union(u, v)
+
+2. divide and conquer
+
+   def partition(l, r):
+      small = l - 1 # not -1
