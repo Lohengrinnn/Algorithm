@@ -1,9 +1,0 @@
-SCC: Strong Connected Components
-Articulation Point
-Bridge
-Biconnected graph
-
-These are related topics of graphic.
-Articulation point is an point connected self SCC, and other SCC.(Precisely, when the point itself is a SCC, and only onnect to one neighbor, it's a termination point, not an articulation point)
-Bridge is an edge connect two SCCs, if there are more than one brighe to connect two SCCs, the two SCCs in fact belong to one SCC.
-Biconnected gragh is a kind of SCC.

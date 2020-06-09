@@ -32,7 +32,7 @@ matrix [4,#,#]
 
 4.Leetcode 329, why doesn't this problme need visited?
   Because the rule to search is smaller the current cell, which naturally prevent backward search, which causes unlimited recursion.
-       [1,2,3]  [1]  [1 <- 2]    2 dfs -> 1, but 2 > 1, so won't dfs back.   
+       [1,2,3]  [1]  [1 <- 2]    2 dfs -> 1, but 2 > 1, so won't dfs back. 
 matrix [4,5,6]       [1 not -> 2]
        [7,8,9]
 *********************************************************************
